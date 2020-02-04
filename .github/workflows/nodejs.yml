@@ -1,0 +1,31 @@
+name: Node CI
+
+on:
+  [push,pull_request]
+
+jobs:
+  build:
+    name: first build job
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+        
+    - name: Invoking my docker action
+      id: docker-action
+      uses: devaradhanm/hello-world-docker-action@master
+      with:
+        site-dir: ${{ github.workspace }}/
+        report-dir: ${{ github.workspace }}/_report
+    
+    - name: Upload report artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+      # Artifact name
+        name: reports
+      # Directory containing files to upload
+        path: ${{ github.workspace }}/_report  
