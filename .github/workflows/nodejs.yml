@@ -19,8 +19,8 @@ jobs:
       id: docker-action
       uses: devaradhanm/hello-world-docker-action@master
       with:
-        site-dir: ${{ github.workspace }}/
-        report-dir: ${{ github.workspace }}/_report
+        site-dir-under-workspace: /
+        report-dir-under-workspace: _report
     
     - name: Upload report artifact
       uses: actions/upload-artifact@v1.0.0
