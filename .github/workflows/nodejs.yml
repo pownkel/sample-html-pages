@@ -14,17 +14,23 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 12.x
+    - name: Puppeteer Screenshot Action
+      uses: lannonbr/puppeteer-screenshot-action@1.1.0
+      with:
+        # The URL you want puppeteer to visit
+        url: https://www.bing.com
+    
 #     - name: Test
 #       uses: ianwalter/puppeteer@v2.0.0
 #       with:
 #           args: yarn
           
-    - name: Invoking my docker action
-      id: docker-action
-      uses: devaradhanm/hello-world-docker-action@master
-      with:
-        site-dir-under-workspace: /
-        report-dir-under-workspace: _report
+#     - name: Invoking my docker action
+#       id: docker-action
+#       uses: devaradhanm/hello-world-docker-action@master
+#       with:
+#         site-dir-under-workspace: /
+#         report-dir-under-workspace: _report
     
     - name: Upload report artifact
       uses: actions/upload-artifact@v1.0.0
