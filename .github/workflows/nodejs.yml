@@ -13,20 +13,20 @@ jobs:
     - name: Chrome version
       run: google-chrome --version 
       
-#     - uses: actions/setup-node@v1
-#       with:
-#         node-version: 12.x
-    - name: Take photo of github.com
-      uses: "lannonbr/puppeteer-screenshot-action@1.0.0"
+    - uses: actions/setup-node@v1
       with:
-       url: https://accessibilityinsights.io
-       fullPage: true
-       screenshotName: accessibilityinsights
-    
-#     - name: Test
-#       uses: ianwalter/puppeteer@v2.0.0
+        node-version: 12.x
+#     - name: Take photo of github.com
+#       uses: "lannonbr/puppeteer-screenshot-action@1.0.0"
 #       with:
-#           args: yarn
+#        url: https://accessibilityinsights.io
+#        fullPage: true
+#        screenshotName: accessibilityinsights
+    
+    - name: Test
+      uses: ianwalter/puppeteer@v2.0.0
+      with:
+          args: yarn
           
 #     - name: Invoking my docker action
 #       id: docker-action
@@ -35,11 +35,11 @@ jobs:
 #         site-dir-under-workspace: /
 #         report-dir-under-workspace: _report
     
-    - name: Upload report artifact
-      uses: actions/upload-artifact@v1.0.0
-      with:
-      # Artifact name
-        name: reports
-      # Directory containing files to upload
-        path: ${{ github.workspace }}/screenshots
-        #${{ github.workspace }}/_report  
+#     - name: Upload report artifact
+#       uses: actions/upload-artifact@v1.0.0
+#       with:
+#       # Artifact name
+#         name: reports
+#       # Directory containing files to upload
+#         path: ${{ github.workspace }}/screenshots
+#         #${{ github.workspace }}/_report  
