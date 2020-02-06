@@ -11,14 +11,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       
-    - uses: actions/setup-node@v1
+#     - uses: actions/setup-node@v1
+#       with:
+#         node-version: 12.x
+    - name: Take photo of github.com
+      uses: "lannonbr/puppeteer-screenshot-action@1.0.0"
       with:
-        node-version: 12.x
-    - name: Puppeteer Screenshot Action
-      uses: lannonbr/puppeteer-screenshot-action@1.1.0
-      with:
-        # The URL you want puppeteer to visit
-        url: https://www.bing.com
+       url: https://github.com
     
 #     - name: Test
 #       uses: ianwalter/puppeteer@v2.0.0
