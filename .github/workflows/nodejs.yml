@@ -37,5 +37,5 @@ jobs:
       # Artifact name
         name: reports
       # Directory containing files to upload
-        path: $GITHUB_WORKSPACE/screenshots
+        path: ${{ github.workspace }}/screenshots
         #${{ github.workspace }}/_report  
