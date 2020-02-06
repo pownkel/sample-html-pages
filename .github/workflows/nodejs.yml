@@ -10,6 +10,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Chrome version
+      run: google-chrome --version 
       
 #     - uses: actions/setup-node@v1
 #       with:
@@ -17,9 +19,9 @@ jobs:
     - name: Take photo of github.com
       uses: "lannonbr/puppeteer-screenshot-action@1.0.0"
       with:
-       url: https://github.com
+       url: https://accessibilityinsights.io
        fullPage: true
-       screenshotName: githubpage
+       screenshotName: accessibilityinsights
     
 #     - name: Test
 #       uses: ianwalter/puppeteer@v2.0.0
