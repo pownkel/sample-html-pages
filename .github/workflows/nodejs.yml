@@ -31,12 +31,18 @@ jobs:
 #       with:
 #           args: yarn
           
-    - name: Invoking my docker action
-      id: docker-action
-      uses: devaradhanm/hello-world-docker-action@master
+    - name: Scan for A11y issues
+      uses: devaradhanm/hello-world-javascript-action@master
       with:
-        site-dir-under-workspace: /
-        report-dir-under-workspace: _report
+        scan-url-relative-path: /  
+        
+    - name: Upload report artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+      # Artifact name
+        name: reports
+      # Directory containing files to upload
+        path: ${{ github.workspace }}/_accessibility-reports
     
 #     - name: Upload report artifact
 #       uses: actions/upload-artifact@v1.0.0
