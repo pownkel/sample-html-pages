@@ -9,16 +9,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Chrome version
-      run: google-chrome --version 
-      
+    - uses: actions/checkout@v2  
     - uses: actions/setup-node@v1
       with:
         node-version: 12.x
           
     - name: Scan for A11y issues
-      uses: devaradhanm/hello-world-javascript-action@master
+      uses: devaradhanm/hello-world-javascript-action@scan-without-annotation
       with:
         scan-url-relative-path: /  
         
@@ -30,11 +27,3 @@ jobs:
       # Directory containing files to upload
         path: ${{ github.workspace }}/_accessibility-reports
     
-#     - name: Upload report artifact
-#       uses: actions/upload-artifact@v1.0.0
-#       with:
-#       # Artifact name
-#         name: reports
-#       # Directory containing files to upload
-#         path: ${{ github.workspace }}/screenshots
-#         #${{ github.workspace }}/_report  
