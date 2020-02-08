@@ -17,7 +17,8 @@ jobs:
     - name: Scan for A11y issues
       uses: devaradhanm/hello-world-javascript-action@annotation
       with:
-        scan-url-relative-path: /  
+        scan-url-relative-path: /
+        repo-token: ${{ secrets.GITHUB_TOKEN }}  
         
     - name: Upload report artifact
       uses: actions/upload-artifact@v1.0.0
