@@ -15,7 +15,7 @@ jobs:
         node-version: 12.x
           
     - name: Scan for A11y issues
-      uses: devaradhanm/hello-world-javascript-action@scan-without-annotation
+      uses: devaradhanm/hello-world-javascript-action@annotation
       with:
         scan-url-relative-path: /  
         
