@@ -20,7 +20,7 @@ jobs:
         node-version: 12.x
           
     - name: Scan for A11y issues
-      uses: 'devaradhanm/hello-world-javascript-action@users/ahmohame/test'
+      uses: devaradhanm/hello-world-javascript-action@ov1
       with:
         scan-url-relative-path: /
         repo-token: ${{ secrets.GITHUB_TOKEN }}  
