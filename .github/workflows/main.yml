@@ -3,7 +3,7 @@ name: Node CI
 on: [push]
 
 jobs:
-  job:
+  build:
     name: first build job
     runs-on: ubuntu-latest
 
