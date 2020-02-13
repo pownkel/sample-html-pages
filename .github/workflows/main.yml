@@ -15,7 +15,7 @@ jobs:
         node-version: 12.x
           
     - name: Scan for A11y issues
-      uses: devaradhanm/hello-world-javascript-action@ov1
+      uses: 'devaradhanm/hello-world-javascript-action@users/ahmohame/test'
       with:
         scan-url-relative-path: /  
         
