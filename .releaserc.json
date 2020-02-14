@@ -1,17 +1,26 @@
-{
-    "branches": [
-      {
-        "name": "master",
-        "prerelease": true
-      }],
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      ["@semantic-release/github", {
-        "assets": [
-          {"path": "README.md", "label": "readme"},
-          {"path": "index.html", "label": "html"}
-        ]
-      }]
-    ]
-}
+"branches": [
+  {
+    "name":"master",
+    "prerelease": true
+  },
+  "release"
+],
+"plugins": [
+  "@semantic-release/commit-analyzer",
+  "@semantic-release/release-notes-generator",
+  [
+    "@semantic-release/github",
+    {
+      "assets": [
+        {
+          "path": "README.md",
+          "label": "readme"
+        },
+        {
+          "path": "index.html",
+          "label": "html"
+        }
+      ]
+    }
+  ]
+]
