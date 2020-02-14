@@ -1,0 +1,23 @@
+{
+  "name": "sample-html-pages",
+  "version": "1.0.0",
+  "description": "You can use the [editor on GitHub](https://github.com/devaradhanm/sample-html-pages/edit/master/README.md) to maintain and preview the content for your website in Markdown files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devaradhanm/sample-html-pages.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devaradhanm/sample-html-pages/issues"
+  },
+  "homepage": "https://github.com/devaradhanm/sample-html-pages#readme",
+  "dependencies": {
+    "semantic-release": "^17.0.3"
+  }
+}

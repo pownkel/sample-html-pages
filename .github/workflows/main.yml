@@ -28,7 +28,8 @@ jobs:
 #         path: ${{ github.workspace }}/_accessibility-reports
     
     - name: Release
-      uses: brpaz/action-semantic-release@v1
+      #uses: brpaz/action-semantic-release@v1
+      run: yarn semantic-release --dry-run
       env:
         dry_run: "true"
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
