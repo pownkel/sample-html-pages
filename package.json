@@ -19,18 +19,5 @@
   "homepage": "https://github.com/devaradhanm/sample-html-pages#readme",
   "dependencies": {
     "@semantic-release/github": "^7.0.3"
-  },
-  "release": {
-    "branches": ["master"],
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      ["@semantic-release/github", {
-        "assets": [
-          {"path": "README.md", "label": "readme"},
-          {"path": "index.html", "label": "html"}
-        ]
-      }]
-    ]
   }
 }
