@@ -26,7 +26,9 @@ jobs:
 #         name: reports
 #       # Directory containing files to upload
 #         path: ${{ github.workspace }}/_accessibility-reports
-    
+    - name: Install dependencies
+      run: yarn install
+      
     - name: Release
       #uses: brpaz/action-semantic-release@v1
       run: yarn semantic-release --dry-run
