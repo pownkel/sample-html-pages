@@ -17,13 +17,22 @@ jobs:
       uses: microsoft/accessibility-insights-action-action@testV1
       with:
         scan-url-relative-path: /
-        repo-token: ${{ secrets.GITHUB_TOKEN }}  
+        repo-token: ${{ secrets.GITHUB_TOKEN }}    
         
-    - name: Upload report artifact
-      uses: actions/upload-artifact@v1.0.0
-      with:
-      # Artifact name
-        name: reports
-      # Directory containing files to upload
-        path: ${{ github.workspace }}/_accessibility-reports
+#     - name: Upload report artifact
+#       uses: actions/upload-artifact@v1.0.0
+#       with:
+#       # Artifact name
+#         name: reports
+#       # Directory containing files to upload
+#         path: ${{ github.workspace }}/_accessibility-reports
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Release
+      #uses: brpaz/action-semantic-release@v1
+      run: yarn semantic-release
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     
