@@ -14,7 +14,7 @@ jobs:
         node-version: 12.x
           
     - name: Scan for A11y issues
-      uses: devaradhanm/hello-world-javascript-action@ov5
+      uses: microsoft/accessibility-insights-action-action@testV1
       with:
         scan-url-relative-path: /
         repo-token: ${{ secrets.GITHUB_TOKEN }}  
