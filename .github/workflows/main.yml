@@ -17,19 +17,19 @@ jobs:
       with:
         node-version: 12.x
           
-#     - name: Scan for A11y issues
-#       uses: devaradhanm/hello-world-javascript-action@annotation
-#       with:
-#         scan-url-relative-path: /
-#         repo-token: ${{ secrets.GITHUB_TOKEN }}  
+    - name: Scan for A11y issues
+      uses: microsoft/accessibility-insights-action@master
+      with:
+        scan-url-relative-path: /
+        repo-token: ${{ secrets.GITHUB_TOKEN }}  
         
-#     - name: Upload report artifact
-#       uses: actions/upload-artifact@v1.0.0
-#       with:
-#       # Artifact name
-#         name: reports
-#       # Directory containing files to upload
-#         path: ${{ github.workspace }}/_accessibility-reports
+    - name: Upload report artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+      # Artifact name
+        name: reports
+      # Directory containing files to upload
+        path: ${{ github.workspace }}/_accessibility-reports
     - name: Install dependencies
       run: yarn install
 
