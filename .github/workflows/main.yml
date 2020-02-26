@@ -1,10 +1,10 @@
 name: Node CI
 
-on: 
-  push:
-    branches: 
-      - master
-      - release
+on: [push]
+#   push:
+#     branches: 
+#       - master
+#       - release
 #   pull_request:
 #     branches: 
 #       - '**'
