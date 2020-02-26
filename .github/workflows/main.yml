@@ -5,7 +5,9 @@ on:
     branches: 
       - master
       - release
-
+  pull_request:
+    branches: 
+      - '**'
 jobs:
   build:
     name: first build job
