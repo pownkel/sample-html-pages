@@ -1,6 +1,6 @@
 name: Node CI
 
-on: [push]
+on: [push,pull_request]
 #   push:
 #     branches: 
 #       - master
@@ -20,7 +20,7 @@ jobs:
         node-version: 12.x
           
     - name: Scan for A11y issues
-      uses: microsoft/accessibility-insights-action@master
+      uses: microsoft/accessibility-insights-action@devaradhan/pr
       with:
         scan-url-relative-path: /
         repo-token: ${{ secrets.GITHUB_TOKEN }}  
