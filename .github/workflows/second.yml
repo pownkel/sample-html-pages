@@ -10,7 +10,7 @@ on:
       - '**'
 jobs:
   build:
-    name: first build job
+    name: second build job
     runs-on: ubuntu-latest
 
     steps:
