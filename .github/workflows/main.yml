@@ -14,12 +14,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout for pull request
-      uses: actions/checkout@v2
-      with: 
-        head_sha: this.githubObj.context.sha,
-      if: github.event_name == 'pull_request'
-    
     - name: Checkout
       uses: actions/checkout@v2
       if: github.event_name == 'push'
