@@ -14,13 +14,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2  
+    - name: Checkout for pull request
+      uses: actions/checkout@v2
+      with: 
+        ref: ${{ github.event.pull_request.head.sha }}
+      if: github.event_name == 'pull_request'
+    
+    - name: Checkout
+      uses: actions/checkout@v2
+      if: github.event_name == 'push'
+    
     - uses: actions/setup-node@v1
       with:
         node-version: 12.x
           
     - name: Scan for A11y issues
-      uses: microsoft/accessibility-insights-action@master
+      uses: microsoft/accessibility-insights-action@9db526dfa35b49f7e2b32c4e06d68f2aa90f38ec
       with:
         scan-url-relative-path: /
         repo-token: ${{ secrets.GITHUB_TOKEN }}  
