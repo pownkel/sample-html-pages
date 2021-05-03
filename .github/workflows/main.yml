@@ -20,7 +20,7 @@ jobs:
         node-version: 12.x
           
     - name: Scan for A11y issues
-      uses: microsoft/accessibility-insights-action@pownkel/dependencies
+      uses: microsoft/accessibility-insights-action@pownkel/remove-slugg
       with:
         scan-url-relative-path: /
         repo-token: ${{ secrets.GITHUB_TOKEN }}  
